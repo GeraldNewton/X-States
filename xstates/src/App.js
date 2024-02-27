@@ -101,7 +101,7 @@ function App() {
       </form>
       {dis && (
         <h1>
-          You selected {ans.country}, {ans.state}, {ans.city}
+          You selected {ans.city}, {ans.state}, {ans.country}
         </h1>
       )}
     </>
