@@ -30,8 +30,8 @@ function App() {
           `https://crio-location-selector.onrender.com/country=${ans.country}/states`
         );
         setStates(response.data);
+        if (ans.country.length) run();
       };
-      if (ans.country.length) run();
     } catch (e) {
       alert(e);
     }
@@ -44,8 +44,8 @@ function App() {
           ` https://crio-location-selector.onrender.com/country=${ans.country}/state=${ans.state}/cities`
         );
         setCities(response.data);
+        if (ans.state.length) run();
       };
-      if (ans.state.length) run();
     } catch (e) {
       alert(e);
     }
