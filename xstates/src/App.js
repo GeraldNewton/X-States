@@ -19,7 +19,7 @@ function App() {
       };
       run();
     } catch (e) {
-      console.log(e);
+      alert(e);
     }
   }, []);
 
@@ -33,7 +33,7 @@ function App() {
       };
       if (ans.country.length) run();
     } catch (e) {
-      console.log(e);
+      alert(e);
     }
   }, [ans.country]);
 
@@ -47,7 +47,7 @@ function App() {
       };
       if (ans.state.length) run();
     } catch (e) {
-      console.log(e);
+      alert(e);
     }
   }, [ans.state]);
 
