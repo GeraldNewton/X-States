@@ -10,45 +10,45 @@ function App() {
   const [disabledCity, setDisabledCity] = useState(true);
 
   useEffect(() => {
+    let run = async () => {
     try {
-      let run = async () => {
         let response = await axios.get(
           "https://crio-location-selector.onrender.com/countries"
         );
         setCountries(response.data);
-      };
-      run();
-    } catch (e) {
-      alert(e);
-    }
+      } catch (e) {
+        alert(e);
+      }
+    };
+    run();
   }, []);
 
   useEffect(() => {
+    let run = async () => {
     try {
-      let run = async () => {
         let response = await axios.get(
           `https://crio-location-selector.onrender.com/country=${ans.country}/states`
         );
         setStates(response.data);
-        if (ans.country.length) run();
-      };
-    } catch (e) {
-      alert(e);
-    }
+      } catch (e) {
+        alert(e);
+      }
+    };
+    if (ans.country.length) run();
   }, [ans.country]);
 
   useEffect(() => {
+    let run = async () => {
     try {
-      let run = async () => {
         let response = await axios.get(
           ` https://crio-location-selector.onrender.com/country=${ans.country}/state=${ans.state}/cities`
         );
         setCities(response.data);
-        if (ans.state.length) run();
-      };
-    } catch (e) {
-      alert(e);
-    }
+      } catch (e) {
+        alert(e);
+      }
+    };
+    if (ans.state.length) run();
   }, [ans.state]);
 
   useEffect(() => {
